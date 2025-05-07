@@ -1,3 +1,19 @@
+// SPDX-FileCopyrightText: 2022 Jezithyr <Jezithyr@gmail.com>
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Jezithyr <jezithyr@gmail.com>
+// SPDX-FileCopyrightText: 2023 Leon Friedrich <60421075+ElectroJr@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 metalgearsloth <comedian_vs_clown@hotmail.com>
+// SPDX-FileCopyrightText: 2024 Aviu00 <93730715+Aviu00@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+// SPDX-FileCopyrightText: 2024 username <113782077+whateverusername0@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2024 whateverusername0 <whateveremail>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 deltanedas <39013340+deltanedas@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 deltanedas <@deltanedas:kde.org>
+// SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Shared.Body.Components;
 using Content.Shared.Body.Systems;
 using Robust.Shared.Containers;
@@ -37,16 +53,16 @@ public sealed partial class BodyPartComponent : Component, ISurgeryToolComponent
     [DataField]
     public float SeverBleeding = 4f;
 
-    [DataField, AlwaysPushInheritance]
+    [DataField]
     public string ToolName { get; set; } = "A body part";
 
-    [DataField, AlwaysPushInheritance]
-    public string SlotId = "";
+    [DataField]
+    public string SlotId = string.Empty;
 
     [DataField, AutoNetworkedField]
     public bool? Used { get; set; } = null;
 
-    [DataField, AlwaysPushInheritance]
+    [DataField]
     public float Speed { get; set; } = 1f;
 
     /// <summary>
@@ -125,7 +141,7 @@ public sealed partial class BodyPartComponent : Component, ISurgeryToolComponent
     /// <summary>
     ///     Shitmed Change: The ID of the base layer for this body part.
     /// </summary>
-    [DataField, AutoNetworkedField, AlwaysPushInheritance]
+    [DataField, AutoNetworkedField]
     public string? BaseLayerId;
 
     /// <summary>
@@ -146,7 +162,7 @@ public sealed partial class BodyPartComponent : Component, ISurgeryToolComponent
     };
 
 
-    [DataField, AutoNetworkedField, AlwaysPushInheritance]
+    [DataField, AutoNetworkedField]
     public BodyPartType PartType = BodyPartType.Other;
 
 
@@ -158,7 +174,7 @@ public sealed partial class BodyPartComponent : Component, ISurgeryToolComponent
     [DataField("vital"), AutoNetworkedField]
     public bool IsVital;
 
-    [DataField, AutoNetworkedField, AlwaysPushInheritance]
+    [DataField, AutoNetworkedField]
     public BodyPartSymmetry Symmetry = BodyPartSymmetry.None;
 
     /// <summary>

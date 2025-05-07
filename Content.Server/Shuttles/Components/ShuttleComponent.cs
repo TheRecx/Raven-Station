@@ -1,3 +1,16 @@
+// SPDX-FileCopyrightText: 2022 Radrark <76271993+Radrark@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2022 metalgearsloth <metalgearsloth@gmail.com>
+// SPDX-FileCopyrightText: 2022 wrexbe <81056464+wrexbe@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 DrSmugleaf <DrSmugleaf@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2023 Kevin Zheng <kevinz5000@gmail.com>
+// SPDX-FileCopyrightText: 2023 router <messagebus@vk.com>
+// SPDX-FileCopyrightText: 2024 metalgearsloth <31366439+metalgearsloth@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 GoobBot <uristmchands@proton.me>
+// SPDX-FileCopyrightText: 2025 Ilya246 <ilyukarno@gmail.com>
+//
+// SPDX-License-Identifier: MIT
+
 using System.Numerics;
 
 namespace Content.Server.Shuttles.Components
@@ -20,7 +33,7 @@ namespace Content.Server.Shuttles.Components
         /// Maximum velocity assuming unupgraded, tier 1 thrusters
         /// </summary>
         [ViewVariables(VVAccess.ReadWrite)]
-        public float BaseMaxLinearVelocity = 20f;
+        public float BaseMaxLinearVelocity = 50f; // Goobstation - billions must die
 
         public const float MaxAngularVelocity = 4f;
 

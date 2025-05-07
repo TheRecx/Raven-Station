@@ -1,3 +1,9 @@
+// SPDX-FileCopyrightText: 2024 slarticodefast <161409025+slarticodefast@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+// SPDX-FileCopyrightText: 2025 ScarKy0 <106310278+ScarKy0@users.noreply.github.com>
+//
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 using Content.Server.StationEvents.Components;
 using Content.Shared.Access;
 using Content.Shared.Access.Systems;
@@ -94,11 +100,11 @@ public sealed class GreytideVirusRule : StationEventSystem<GreytideVirusRuleComp
                 continue;
 
             // use the access reader from the door electronics if they exist
-            if (!_access.GetMainAccessReader(airlockUid, out var accessComp))
+            if (!_access.GetMainAccessReader(airlockUid, out var accessEnt))
                 continue;
 
             // check access
-            if (!_access.AreAccessTagsAllowed(accessIds, accessComp) || _access.AreAccessTagsAllowed(virusComp.Blacklist, accessComp))
+            if (!_access.AreAccessTagsAllowed(accessIds, accessEnt.Value.Comp) || _access.AreAccessTagsAllowed(virusComp.Blacklist, accessEnt.Value.Comp))
                 continue;
 
             // open and bolt airlocks
