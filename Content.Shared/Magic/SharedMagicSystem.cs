@@ -98,7 +98,7 @@ using Content.Shared.Coordinates.Helpers;
 using Content.Shared.Damage;
 using Content.Shared.Doors.Components;
 using Content.Shared.Doors.Systems;
-using Content.Shared.FixedPoint;
+using Content.Goobstation.Maths.FixedPoint;
 using Content.Shared.Ghost;
 using Content.Shared.Gibbing.Events;
 using Content.Shared.Hands.Components;
@@ -979,11 +979,10 @@ public abstract class SharedMagicSystem : EntitySystem
             if (invocationEv.ToHeal.GetTotal() > FixedPoint2.Zero)
             {
                 _damageable.TryChangeDamage(args.Performer,
-                    -invocationEv.ToHeal,
+                    -invocationEv.ToHeal * 11f,
                     true,
                     false,
-                    canSever: false,
-                    targetPart: TargetBodyPart.All);
+                    targetPart: TargetBodyPart.All); // Shitmed Change
             }
         }
 
